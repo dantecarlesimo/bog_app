@@ -1,0 +1,11 @@
+
+<h2> Add your creature name and description here! </h2>
+<form action="/bogs" method="post">
+    <input type="text" placeholder="name"name="bog[name]"><br>
+    <textarea placeholder="description" name="bog[description]"></textarea><br>
+
+    <!-- authenticity token required for rails -->
+    <%= token_tag form_authenticity_token %>
+
+    <button> Save Bog </button>
+</form>

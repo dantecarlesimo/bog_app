@@ -1,0 +1,24 @@
+ <h2>Creature Info Page</h2> <br>
+ *************************************************<br>
+ <div>
+        Name: <%= @bog.name %> <br>
+        Description: <%= @bog.description %>
+    </div>
+    *************************************************<br>
+
+      <form action="/bogs/<%=@bog.id%>/edit" method="get">
+   	<!-- authenticity token required for rails -->
+   			 <%= token_tag form_authenticity_token %>
+    		 <button>Edit</button>
+		</form>
+
+		  <form action="/bogs/<%=@bog.id%>/delete" method="get">
+   	<!-- authenticity token required for rails -->
+   			 <%= token_tag form_authenticity_token %>
+    		 <button>Delete</button>
+		</form>
+		    <form action="/bogs" method="get">
+   	<!-- authenticity token required for rails -->
+   			 <%= token_tag form_authenticity_token %>
+    		 <button>Home</button>
+		</form>

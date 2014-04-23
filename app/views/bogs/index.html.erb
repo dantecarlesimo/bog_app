@@ -1,0 +1,30 @@
+<h1> Hello Bog-ers! </h2>
+  
+  *****************************************************************<br>
+  Below is a list of all of the creatures you have found in the Bog:<br>
+  *****************************************************************<br>
+
+	<% @bogs.each do |bog| %>
+
+    <div>
+        Name: <%= bog[:name] %> <br>
+        Description: <%= bog[:description] %><br>
+        <form action="/bogs/<%= bog[:id]%>" method="get">
+   	<!-- authenticity token required for rails -->
+   			 <%= token_tag form_authenticity_token %>
+    		 <button>Select</button>
+		</form>
+        ========================================
+    </div>
+
+<% end %>
+
+*****************************************************************<br>
+ Add a new creature to the list:
+
+<form action="/bogs/new" method="get">
+   <!-- authenticity token required for rails -->
+    <%= token_tag form_authenticity_token %>
+
+    <button> Add New Creature </button>
+</form>
